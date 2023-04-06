@@ -1,0 +1,24 @@
+
+
+In POSTMAN -
+--------------------------------------------------------------------------
+@PostMapping - addProduct
+
+Set to Post - http://localhost:9090/productController/addProduct
+
+{
+	"productName": "Indi Tandoori Paneer Pizza ",
+    "productDesc": "Include spicy Indian Paneer with mayo",
+    "price": 370
+}
+
+{
+    "productName": "Chicken Tandoori Pizza L",
+    "productDesc": "Include Chicken Roasted on Pizza",
+    "price": 390
+}
+-----------------------------------------------------------------------
+
+@GetMapping - viewAllProducts
+
+http://localhost:9090/productController/viewAllProducts

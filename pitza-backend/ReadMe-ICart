@@ -1,0 +1,30 @@
+
+@PostMapping - /addProductToCart
+
+In POSTMAN - 
+
+Set to POST - http://localhost:9090/cartController/addProductToCart
+
+Put in Body - 
+
+{
+    "email" : "kunalshetty1070@gmail.com",
+    "price" : 390,
+    "productName" : "Chicken Tandoori Pizza L"
+}
+
+----------------------------------------------------------------------
+
+@GetMapping - viewAllCart/{email}
+
+In POSTMAN - 
+
+Set to GET - http://localhost:9090/cartController/viewAllCart/kunalshetty1070@gmail.com
+
+------------------------------------------------------------------------
+
+@DeleteMapping - removeProduct/{cartId}
+
+In POSTMAN - 
+
+Set to DELETE - http://localhost:9090/cartController/removeProduct/1

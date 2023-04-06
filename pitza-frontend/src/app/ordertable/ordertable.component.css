@@ -1,0 +1,329 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500");
+* {
+  padding: 0;
+  margin: 0;
+}
+:root {
+  --brand: #060753;
+  --menu: #0e1d72;
+  --button: #0c70e2;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  background-color:rgb(167, 206, 231);
+}
+.sidebar {
+  position: fixed;
+  left: 0px;
+  width: 250px;
+  height: 100%;
+  background: var(--menu);
+  transition: all 0.5s ease;
+}
+.sidebar header {
+  font-size: 22px;
+  font-weight: bold;
+  color: black;
+  line-height: 70px;
+  text-align: center;
+  background: var(--brand);
+  user-select: none;
+}
+.sidebar ul a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  list-style: none;
+  text-decoration: none;
+  line-height: 65px;
+  font-size: 20px;
+  color: black;
+  padding-left: 40px;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.4s;
+}
+ul li:hover a {
+  padding-left: 50px;
+}
+.sidebar ul a i {
+  margin-right: 16px;
+}
+#check {
+  display: none;
+}
+label #btn,
+label #cancel {
+  display: none;
+  position: fixed;
+  background: var(--brand);
+  border-radius: 3px;
+  cursor: pointer;
+}
+label #btn {
+  left: 30px;
+  top: 15px;
+  font-size: 20px;
+  color: black;
+  padding: 8px 12px;
+  transition: all 0.5s;
+  background-color: var(--menu);
+  z-index: 2;
+}
+label #cancel {
+  z-index: 1;
+  left: -145px;
+  top: 17px;
+  font-size: 24px;
+  color: black;
+  padding: 4px 9px;
+  transition: all 0.5s ease;
+}
+#check:checked ~ .sidebar {
+  left: 0;
+}
+#check:checked ~ label #btn {
+  left: 200px;
+  opacity: 0;
+  pointer-events: none;
+}
+#check:checked ~ label #cancel {
+  left: 135px;
+}
+.main-content {
+  margin-left: 250px;
+  /* background: url(../profile.png) no-repeat;
+  background-position: center;
+  background-size: cover; */
+  min-height: 100vh;
+  transition: all 0.5s;
+}
+.header {
+  font-size: 30px;
+  position: sticky;
+  top: 0px;
+  font-weight: bold;
+  margin-left: 250px;
+  color: black;
+  line-height: 70px;
+  text-align: center;
+  background: var(--menu);
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.3), 0 8px 20px 0 rgba(0, 0, 0, 0.25);
+  user-select: none;
+  transition: margin-left 0.5s ease;
+  z-index: 1;
+}
+
+#check:checked ~ .header {
+  margin-left: 180px;
+}
+
+#cart {
+  position: absolute;
+  color: black;
+  top: 22px;
+  right: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.5s ease;
+}
+.cart-updated {
+  opacity: 0;
+  pointer-events: none;
+}
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+  margin: 30px 0;
+}
+.cards {
+  height: auto;
+  width: 75%;
+  display: grid;
+  grid-template-columns: auto 40%;
+  grid-gap: 10px;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  background-color: rgba(0, 0, 255, 0.1);
+  margin: 10px 0px;
+  font-size: 16px;
+}
+.item,
+.price {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.item,
+.description {
+  text-align: left;
+  padding: 10px 0px 10px 20px;
+}
+.description {
+  font-size: 18px;
+  text-align: justify;
+}
+.price {
+  padding-top: 10px;
+}
+.button {
+  border-radius: 4px;
+  background-color: var(--button);
+  border: none;
+  color: black;
+  text-align: center;
+  font-size: 18px;
+  padding: 15px 0;
+  width: 180px;
+  height: 50px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px auto 15px;
+}
+
+.button a {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button a:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover a {
+  padding-right: 20px;
+}
+
+.button:hover a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+.button:hover a:after {
+  opacity: 1;
+  right: 0;
+}
+/*                                            Media Quries for less than 992px                          */
+@media screen and (max-width: 992px) {
+  .sidebar {
+    left: -180px;
+    width: 180px;
+  }
+  .sidebar header {
+    padding-right: 20px;
+    font-size: 18px;
+  }
+  .sidebar ul a {
+    font-size: 16px;
+    padding-left: 20px;
+  }
+  label #btn,
+  label #cancel {
+    display: block;
+  }
+  .main-content,
+  .header {
+    margin-left: 0px;
+  }
+  .header {
+    font-size: 24px;
+  }
+  .item,
+  .price {
+    font-size: 18px;
+  }
+  .description,
+  .button {
+    font-size: 16px;
+  }
+  .button {
+    height: 40px;
+    width: 80%;
+    padding: 0px;
+  }
+  .button:hover span {
+    padding-right: 15px;
+  }
+  #cart {
+    font-size: 18px;
+    top: 25px;
+    right: 40px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header {
+    font-size: 18px;
+  }
+  .item,
+  .price {
+    font-size: 16px;
+  }
+  .description,
+  .button {
+    font-size: 14px;
+  }
+  .button {
+    height: 30px;
+    width: 80%;
+    padding: 5px 0px;
+  }
+  .button:hover span {
+    padding-right: 10px;
+  }
+
+}
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+*{
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+}
+.sidebar {
+  position: fixed;
+  left: 0px; 
+  width: 250px;
+  height: 100%;
+  background: #2a40be;
+  transition: all .5s ease;
+}
+.sidebar header {
+  font-size: 22px;
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  background: #060883;
+  user-select: none;
+}
+.sidebar ul a{
+  display: block;
+  height: 100%;
+  width: 100%;
+  list-style: none;
+  text-decoration: none;
+  line-height: 65px;
+  font-size: 20px;
+  color: white;
+  padding-left: 40px;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  border-top: 1px solid rgba(255,255,255,.1);
+  transition: .4s;
+}

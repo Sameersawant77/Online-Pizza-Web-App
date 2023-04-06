@@ -1,0 +1,22 @@
+
+@PostMapping - addOrder
+
+Set to POST - http://localhost:9090/orderController/addOrder
+
+In Body - 
+{
+    "orderStatus": "pending",
+    "orderDate" : "2022-06-04",
+    "email" : "kunalshetty1070@gmail.com",
+    "productName" : "Veg Pizza",
+    "price" : 100
+}
+
+-------------------------------------------------------------
+
+@GetMapping - viewAllOrder/{email}
+
+Set to GET - http://localhost:9090/orderController/viewAllOrder/{email}
+
+http://localhost:9090/orderController/viewAllOrder/kunalshetty1070@gmail.com
+

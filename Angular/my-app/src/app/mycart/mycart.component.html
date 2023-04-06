@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <title>Pitza | My Cart</title>
+</head>
+<body>
+  <input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+      <header>Pitza</header>
+      <ul>
+        <li><a href="http://localhost:4200/order"><i class="fas fa-history"></i>Orders History</a></li>
+        <li><a href="http://localhost:4200/placeorder"><i class="fas fa-shopping-cart"></i>Place Order</a></li>
+        <li><a href="http://localhost:4200/mycart"><i class="fas fa-history"></i>My Cart</a></li>
+        <li><a role="button" (click)="logout()"><i class="fas fa-sign-out-alt"></i>Log out</a></li>
+      </ul>
+    </div>
+  <div class="header">
+    <p>My Cart</p>
+    <a href=""><i class="fas fa-shopping-cart" id="cart"></i></a>
+  </div>
+  <div class="main-content">
+    <br>
+    <div class="text-center">Click order to Confirm Order (Only Cash on delivery is accepted)</div>
+    <div class="cards-container">
+      <div class="cards" *ngFor="let user of stringObject">
+        <div class="item" id="item">ID {{user.cartId}}</div>
+        <div class="price" id="price">Rs {{user.price}}</div>
+        <div class="description" id="description">{{user.productName}}</div>
+        
+        
+        <button class="button" (click)="deleteCart(user.cartId)"><a id="addto"><h5>REMOVE ORDER</h5></a></button>
+        <div></div>
+        <button class="button" (click)="addOrder(user.cartId,user.productName, user.price)"><a id="addto"><h4>Order Confirm</h4></a></button>
+      </div>
+      </div>
+    </div>
+  
+  <script src="/assets/js/PlaceOrder.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  
+  
+</body>
+</html>

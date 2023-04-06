@@ -1,0 +1,48 @@
+---------------------------I. Create New DataBase on MySQL------------------------
+Create database name : pitza
+   
+ ----------------------------II. Run  SpringBoot Server-----------------------------
+
+// Table was created by SpringBoot(After Start SpringBoot Server) 
+
+------------------------------------------------------------------------------------
+
+@PostMapping - addUser
+
+In POSTMAN -
+
+Set to POST - http://localhost:9090/usercontroller/addUser
+
+{
+    "name":"Kunal",
+    "email":"kunalshetty1070@gmail.com",
+    "address":"Home",
+    "phone":"1234567890",
+    "password":"hello"
+}
+
+------------------------------------------------------------------------------------
+
+@GetMapping - getUser/checkUser/{email}/{password}
+
+In POSTMAN -
+
+Set to GET - http://localhost:9090/usercontroller/getUser/checkuser/kunalshetty1070@gmail.com/hello
+
+------------------------------------------------------------------------------------
+
+@GetMapping - checkEmail/{email}
+
+In POSTMAN = 
+
+Set to Get - http://localhost:9090/usercontroller/checkEmail/kunalshetty1070@gmail.com
+
+If Email Not Exist then ERROR
+
+--------------------------------------------------------------------------------------
+
+@GetMapping - signOut
+
+In POSTMAN -
+
+Set to Get - http://localhost:9090/usercontroller/signOut
